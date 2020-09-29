@@ -5,7 +5,7 @@ const AddTodo: React.FC<{ tasks: TodoShape[], addTask: React.Dispatch<React.SetS
     const [value, setValue] = useOnChangeHook('');
     const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        addTask(tasks.concat({ id: 123, task: value }))
+        addTask(tasks.concat({ id: tasks.length + 1, task: value }))
     }
     return (<>
         <form onSubmit={onSubmitHandler}>
